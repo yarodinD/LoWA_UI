@@ -1,0 +1,33 @@
+/*
+ * Remove template code below
+ */
+:host {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.main-drawer-container {
+  flex: 1;
+}
+::ng-deep {
+  .mat-drawer-inner-container {
+    display: flex;
+    flex-direction: column;
+  }
+  .nav-button {
+    border-radius: 0 !important;
+  }
+  .item-card {
+    margin: 2em;
+    &.no-top {
+      margin-top: 0;
+    }
+    &.no-bottom {
+      margin-bottom: 0;
+    }
+    &.warning-card {
+      background-color: rgba(255,0,0,0.7) !important;
+    }
+  }
+}

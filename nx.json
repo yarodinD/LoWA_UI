@@ -8,10 +8,10 @@
     "nx.json": "*"
   },
   "projects": {
-    "undefined-e2e": {
+    "climathon-ma-e2e": {
       "tags": []
     },
-    "undefined": {
+    "climathon-ma": {
       "tags": []
     }
   }

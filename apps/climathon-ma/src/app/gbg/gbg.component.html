@@ -1,0 +1,53 @@
+<div class="gbg-container">
+  <mat-card class="item-card">
+    <mat-card-header>Wasserbedarf</mat-card-header>
+    <mat-card-content>
+      <mat-table [dataSource]="data" matSort class="gbg-table">
+        <ng-container matColumnDef="street">
+          <mat-header-cell mat-sort-header *matHeaderCellDef>
+            Straße
+          </mat-header-cell>
+          <mat-cell *matCellDef="let element">
+            {{ element.street }}
+          </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="houseNo">
+          <mat-header-cell mat-sort-header *matHeaderCellDef>
+            Hausnummer
+          </mat-header-cell>
+          <mat-cell *matCellDef="let element"> {{ element.houseNo }} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="temp">
+          <mat-header-cell mat-sort-header *matHeaderCellDef>
+            Temperatur [°C]
+          </mat-header-cell>
+          <mat-cell *matCellDef="let element"> {{ element.temp }} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="humidity">
+          <mat-header-cell mat-sort-header *matHeaderCellDef>
+            Luftfeuchtigkeit [%]
+          </mat-header-cell>
+          <mat-cell *matCellDef="let element">
+            {{ element.humidity }}
+          </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="need">
+          <mat-header-cell mat-sort-header *matHeaderCellDef>
+            need
+          </mat-header-cell>
+          <mat-cell *matCellDef="let element"> {{ element.need }} </mat-cell>
+        </ng-container>
+
+        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+        <mat-row
+          *matRowDef="let row; columns: displayedColumns"
+          [ngClass]="{ 'make-red': row.need }"
+        ></mat-row>
+      </mat-table>
+    </mat-card-content>
+  </mat-card>
+</div>

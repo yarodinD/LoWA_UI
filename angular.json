@@ -1,39 +1,62 @@
 {
   "version": 1,
   "projects": {
-    "undefined": {
+    "climathon-ma": {
       "projectType": "application",
       "schematics": {
+        "@nrwl/angular:class": {
+          "skipTests": true
+        },
         "@nrwl/angular:component": {
-          "style": "scss"
+          "style": "scss",
+          "skipTests": true
+        },
+        "@nrwl/angular:directive": {
+          "skipTests": true
+        },
+        "@nrwl/angular:guard": {
+          "skipTests": true
+        },
+        "@nrwl/angular:module": {
+          "skipTests": true
+        },
+        "@nrwl/angular:pipe": {
+          "skipTests": true
+        },
+        "@nrwl/angular:service": {
+          "skipTests": true
         }
       },
-      "root": "apps/undefined",
-      "sourceRoot": "apps/undefined/src",
+      "root": "apps/climathon-ma",
+      "sourceRoot": "apps/climathon-ma/src",
       "prefix": "climathon-ma",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/apps/undefined",
-            "index": "apps/undefined/src/index.html",
-            "main": "apps/undefined/src/main.ts",
-            "polyfills": "apps/undefined/src/polyfills.ts",
-            "tsConfig": "apps/undefined/tsconfig.app.json",
+            "outputPath": "dist/apps/climathon-ma",
+            "index": "apps/climathon-ma/src/index.html",
+            "main": "apps/climathon-ma/src/main.ts",
+            "polyfills": "apps/climathon-ma/src/polyfills.ts",
+            "tsConfig": "apps/climathon-ma/tsconfig.app.json",
             "aot": false,
             "assets": [
-              "apps/undefined/src/favicon.ico",
-              "apps/undefined/src/assets"
+              "apps/climathon-ma/src/favicon.ico",
+              "apps/climathon-ma/src/assets"
             ],
-            "styles": ["apps/undefined/src/styles.scss"],
+            "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
+              "./node_modules/leaflet/dist/leaflet.css",
+              "apps/climathon-ma/src/styles.scss"
+            ],
             "scripts": []
           },
           "configurations": {
             "production": {
               "fileReplacements": [
                 {
-                  "replace": "apps/undefined/src/environments/environment.ts",
-                  "with": "apps/undefined/src/environments/environment.prod.ts"
+                  "replace": "apps/climathon-ma/src/environments/environment.ts",
+                  "with": "apps/climathon-ma/src/environments/environment.prod.ts"
                 }
               ],
               "optimization": true,
@@ -63,63 +86,71 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "undefined:build"
+            "browserTarget": "climathon-ma:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "undefined:build:production"
+              "browserTarget": "climathon-ma:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "undefined:build"
+            "browserTarget": "climathon-ma:build"
           }
         },
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": [
-              "apps/undefined/tsconfig.app.json",
-              "apps/undefined/tsconfig.spec.json"
+              "apps/climathon-ma/tsconfig.app.json",
+              "apps/climathon-ma/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!apps/undefined/**"]
+            "exclude": [
+              "**/node_modules/**",
+              "!apps/climathon-ma/**"
+            ]
           }
         },
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "apps/undefined/jest.config.js",
-            "tsConfig": "apps/undefined/tsconfig.spec.json",
-            "setupFile": "apps/undefined/src/test-setup.ts"
+            "jestConfig": "apps/climathon-ma/jest.config.js",
+            "tsConfig": "apps/climathon-ma/tsconfig.spec.json",
+            "setupFile": "apps/climathon-ma/src/test-setup.ts"
           }
         }
       }
     },
-    "undefined-e2e": {
-      "root": "apps/undefined-e2e",
-      "sourceRoot": "apps/undefined-e2e/src",
+    "climathon-ma-e2e": {
+      "root": "apps/climathon-ma-e2e",
+      "sourceRoot": "apps/climathon-ma-e2e/src",
       "projectType": "application",
       "architect": {
         "e2e": {
           "builder": "@nrwl/cypress:cypress",
           "options": {
-            "cypressConfig": "apps/undefined-e2e/cypress.json",
-            "tsConfig": "apps/undefined-e2e/tsconfig.e2e.json",
-            "devServerTarget": "undefined:serve"
+            "cypressConfig": "apps/climathon-ma-e2e/cypress.json",
+            "tsConfig": "apps/climathon-ma-e2e/tsconfig.e2e.json",
+            "devServerTarget": "climathon-ma:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "undefined:serve:production"
+              "devServerTarget": "climathon-ma:serve:production"
             }
           }
         },
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": ["apps/undefined-e2e/tsconfig.e2e.json"],
-            "exclude": ["**/node_modules/**", "!apps/undefined-e2e/**"]
+            "tsConfig": [
+              "apps/climathon-ma-e2e/tsconfig.e2e.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!apps/climathon-ma-e2e/**"
+            ]
           }
         }
       }
@@ -137,5 +168,5 @@
       "unitTestRunner": "jest"
     }
   },
-  "defaultProject": "undefined"
+  "defaultProject": "climathon-ma"
 }

@@ -1,0 +1,8 @@
+.home-container {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+::ng-deep .home-map {
+    height: 300px;
+}

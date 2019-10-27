@@ -1,9 +1,9 @@
 import { getGreeting } from '../support/app.po';
 
-describe('undefined', () => {
+describe('climathon-ma', () => {
   beforeEach(() => cy.visit('/'));
 
   it('should display welcome message', () => {
-    getGreeting().contains('Welcome to undefined!');
+    getGreeting().contains('Welcome to climathon-ma!');
   });
 });
