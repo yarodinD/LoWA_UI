@@ -31,14 +31,39 @@
     </mat-card-header>
     <mat-card-content>
       <div>
-        Temperatur: {{ lastResult.measurements.temperature | number }}°C
+        <span>
+          Temperatur: {{ lastResult.measurements.temperature | number }}°C
+        </span>
+        <mat-icon aria-hidden="false">
+          {{ trend(lastResult.measurements.history.temperature) }}</mat-icon
+        >
       </div>
       <div>
-        Luftfeuchtigkeit: {{ lastResult.measurements.humidity | number }}%
+        <span>
+          Luftfeuchtigkeit: {{ lastResult.measurements.humidity | number }}%
+        </span>
+        <mat-icon aria-hidden="false">
+          {{ trend(lastResult.measurements.history.humidity) }}</mat-icon
+        >
       </div>
       <div>
-        Windgeschwindigkeit:
-        {{ lastResult.measurements.windspeed | number }}km/h
+        <span>
+          Windgeschwindigkeit:
+          {{ lastResult.measurements.windspeed | number }}km/h
+        </span>
+        <mat-icon aria-hidden="false">
+          {{ trend(lastResult.measurements.history.windspeed) }} <</mat-icon
+        >
+      </div>
+      <div>
+        <span>
+          Niederschlag: {{ lastResult.measurements.precipitation }}mm/m²
+        </span>
+        <span>
+          <mat-icon aria-hidden="false">{{
+            trend(lastResult.measurements.history.precipitation)
+          }}</mat-icon>
+        </span>
       </div>
     </mat-card-content>
   </mat-card>

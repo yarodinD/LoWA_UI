@@ -8,12 +8,13 @@ import { HttpClientModule } from '@angular/common/http';
 import { LeafletModule } from '@asymmetrik/ngx-leaflet';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
+import { MatIconModule } from '@angular/material/icon';
+import { MatListModule } from '@angular/material/list';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatTableModule } from '@angular/material/table';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import {MatListModule} from '@angular/material/list';
 
 @NgModule({
   declarations: [AppComponent, HomeComponent, GbgComponent],
@@ -25,6 +26,7 @@ import {MatListModule} from '@angular/material/list';
     MatListModule,
     MatToolbarModule,
     MatTableModule,
+    MatIconModule,
     MatSidenavModule,
     MatButtonModule,
     MatCardModule,
