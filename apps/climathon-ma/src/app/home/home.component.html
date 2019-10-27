@@ -8,6 +8,7 @@
         [(leafletCenter)]="center"
         (leafletCenterChange)="refreshDetails($event)"
       ></div>
+      <p style="text-align: center;">Standort: {{ center.lat | number }}, {{ center.lng | number }}</p>
     </mat-card-content>
   </mat-card>
 
@@ -15,7 +16,6 @@
     *ngIf="warnings && warnings.length > 0"
     class="item-card no-top warning-card"
   >
-    <mat-card-header>Aktuelle Warnungen</mat-card-header>
     <mat-card-content>
       <mat-list role="list">
         <mat-list-item *ngFor="let entry of warnings" role="listitem">
@@ -26,9 +26,6 @@
   </mat-card>
 
   <mat-card class="item-card no-top">
-    <mat-card-header>
-      Standort: {{ center.lat | number }}, {{ center.lng | number }}
-    </mat-card-header>
     <mat-card-content>
       <div>
         <span>
